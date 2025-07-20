@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+:root {
+  --bg: #e3f2fd;
+  --toolbar: #ffffff;
+  --primary: #0288d1;
+  --primary-hover: #0277bd;
+  --accent-green: #00c853;
+  --text-color: #263238;
+  --light-border: #cfd8dc;
+  --hover-bg: #f1f1f1;
+  --shadow: rgba(0, 0, 0, 0.06);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 960px;
+  margin: 30px auto;
+  padding: 24px;
+  background: var(--toolbar);
+  box-shadow: 0 4px 16px var(--shadow);
+  border-radius: 12px;
+}
+
+.toolbar,
+.bottom-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+canvas {
+  display: block;
+  margin: 30px auto;
+  border: 2px solid var(--light-border);
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px var(--shadow);
+  cursor: crosshair; /* ✅ Changed from 'none' to 'crosshair' */
+  max-width: 100%;
+}
+
+input[type="color"],
+input[type="range"],
+input[type="file"],
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--light-border);
+  font-size: 14px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  color: var(--text-color);
+}
+
+input[type="range"] {
+  width: 120px;
+}
+
+button:hover,
+input[type="color"]:hover,
+input[type="range"]:hover,
+input[type="file"]:hover {
+  background-color: var(--hover-bg);
+}
+
+button:focus,
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(2, 136, 209, 0.3);
+}
+
+button.active {
+  background-color: var(--accent-green);
+  color: white;
+  border: 1px solid #009624;
+}
+
+/* Color picker styling */
+.color-picker-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.color-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.color-circle:hover {
+  border: 2px solid var(--primary);
+}
+
+#colorPicker {
+  position: absolute;
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+}
+
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .toolbar,
+  .bottom-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .container {
+    margin: 16px;
+    padding: 16px;
+  }
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+}

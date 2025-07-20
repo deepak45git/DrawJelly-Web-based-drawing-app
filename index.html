@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎨 DrawJelly</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎨 DrawJelly - Drawing App</h1>
+  </header>
+
+  <div class="container">
+    <div class="toolbar">
+      <div class="color-picker-wrapper">
+        <div id="colorCircle" class="color-circle" title="Pick a color 🎨"></div>
+        <input type="color" id="colorPicker" value="#000000">
+      </div>
+
+      <input type="range" id="brushSize" min="1" max="50" value="5">
+      <button id="eraser">Eraser</button>
+      <button id="clear">Clear</button>
+      <button id="replay">⏯️ Play Replay</button>
+      <button id="pauseReplay">⏸️ Pause Replay</button>
+      <label>⏱️ Speed:
+        <input type="range" id="replaySpeed" min="1" max="20" value="10">
+      </label>
+      <button id="undo">↩️ Undo</button>
+      <button id="redo">↪️ Redo</button>
+    </div>
+
+    <canvas id="drawingCanvas" width="800" height="500"></canvas>
+
+    <div class="bottom-toolbar">
+      <button id="save">Save Image</button>
+    </div>
+  </div>
+
+  <footer>© 2025 DrawJelly. All rights reserved.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
